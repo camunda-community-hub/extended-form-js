@@ -48,6 +48,20 @@ describe('playground', function() {
       approvedBy: 'John Doe',
       mailto: ['regional-manager', 'approver'],
       product: 'camunda-cloud',
+      dynamicDataTestData: [
+        {
+          'label': 'Dynamic Label 1',
+          'value': 'dynamicLabel1'
+        },
+        {
+          'label': 'Dynamic Label 2',
+          'value': 'dynamicLabel2'
+        },
+        {
+          'label': 'Dynamic Label 3',
+          'value': 'dynamicLabel3'
+        }
+      ],
       tags: [ 'tag1', 'tag2', 'tag3' ],
       language: 'english'
     };
