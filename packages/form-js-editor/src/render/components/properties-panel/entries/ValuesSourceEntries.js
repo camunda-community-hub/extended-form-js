@@ -12,13 +12,15 @@ export function ValuesSourceSelectorEntry(props) {
     field
   } = props;
 
-  return [ {
-    id: 'values-source',
-    component: ValuesSourceSelect,
-    isEdited: isSelectEntryEdited,
-    editField,
-    field,
-  } ];
+  return [ 
+    {
+      id: 'values-source',
+      component: ValuesSourceSelect,
+      isEdited: isSelectEntryEdited,
+      editField,
+      field
+    } 
+  ];
 }
 
 export function InputKeyValuesSourceEntry(props) {
