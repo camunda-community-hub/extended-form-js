@@ -207,7 +207,7 @@ const VALUES_SOURCES_DEFAULTS = {
 };
 
 
-//* Helpers
+// helpers ///////////////////
 
 export function getValuesSource(field) {
 
