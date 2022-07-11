@@ -369,7 +369,7 @@ describe('GeneralGroup', function() {
 
     describe('for singleSelect-like INPUTS', () => {
 
-      const singleSelectInputTypes = ['radio', 'select'];
+      const singleSelectInputTypes = [ 'radio', 'select' ];
 
       it('should NOT render by default', () => {
 
