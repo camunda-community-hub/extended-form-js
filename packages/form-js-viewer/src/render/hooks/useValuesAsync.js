@@ -37,8 +37,7 @@ export default function(field) {
 
     if (valuesKey !== undefined) {
 
-      const safeInitialData = initialData || {};
-      const keyedValues = safeInitialData[ valuesKey ];
+      const keyedValues = (initialData || {})[ valuesKey ];
 
       if (keyedValues && Array.isArray(keyedValues)) {
         values = keyedValues;
