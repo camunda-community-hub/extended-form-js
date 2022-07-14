@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -26,6 +26,7 @@ export default function Number(props) {
     description,
     id,
     label,
+	hiddenFx,
     validate = {}
   } = field;
 
@@ -42,7 +43,7 @@ export default function Number(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
@@ -69,3 +70,4 @@ Number.type = type;
 Number.keyed = true;
 Number.label = 'Number';
 Number.emptyValue = null;
+Number.hiddenFx = 'false';

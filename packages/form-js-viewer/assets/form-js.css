@@ -336,3 +336,11 @@
   padding: 6px 8px;
   color: var(--color-text-lighter);
 }
+
+
+.hidden {
+	display: none;
+}
+.fjs-form-editor .hidden {
+	display: inline;
+}

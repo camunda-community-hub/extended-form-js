@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -26,6 +26,7 @@ export default function Textfield(props) {
     description,
     id,
     label,
+	hiddenFx,
     validate = {}
   } = field;
 
@@ -40,7 +41,7 @@ export default function Textfield(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
@@ -67,3 +68,4 @@ Textfield.type = type;
 Textfield.label = 'Text Field';
 Textfield.keyed = true;
 Textfield.emptyValue = '';
+Textfield.hiddenFx = 'false';

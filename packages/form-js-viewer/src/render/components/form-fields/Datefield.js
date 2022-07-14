@@ -8,6 +8,7 @@ import Label from '../Label';
 
 import {
   formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -26,6 +27,7 @@ export default function Datefield(props) {
     description,
     id,
     label,
+	hiddenFx,
     validate = {}
   } = field;
 
@@ -40,11 +42,12 @@ export default function Datefield(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
-      required={ required } />
+      required={ required }
+	  />
     <input
       class="fjs-input"
       disabled={ disabled }
@@ -67,3 +70,4 @@ Datefield.type = type;
 Datefield.label = 'Date Field';
 Datefield.keyed = true;
 Datefield.emptyValue = '';
+Datefield.hiddenFx = 'false';

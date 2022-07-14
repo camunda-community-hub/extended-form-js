@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -25,6 +25,7 @@ export default function Select(props) {
     description,
     id,
     label,
+	hiddenFx,
     validate = {},
     values
   } = field;
@@ -40,7 +41,7 @@ export default function Select(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
@@ -86,3 +87,4 @@ Select.type = type;
 Select.label = 'Select';
 Select.keyed = true;
 Select.emptyValue = null;
+Select.hiddenFx = 'false';

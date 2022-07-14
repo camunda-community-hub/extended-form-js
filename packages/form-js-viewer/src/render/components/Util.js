@@ -2,6 +2,8 @@ import snarkdown from '@bpmn-io/snarkdown';
 
 import { sanitizeHTML } from './Sanitizer';
 
+import useService from '../hooks/useService';
+
 export function formFieldClasses(type, errors = []) {
   if (!type) {
     throw new Error('type required');
@@ -18,6 +20,39 @@ export function formFieldClasses(type, errors = []) {
 
   return classes.join(' ');
 }
+
+export function formFieldClassesCustom(type, hiddenFx, errors = []) {
+	
+
+  const form = useService('form');
+  let dataStr = JSON.stringify(form._getState().data);
+  console.log(form);
+
+  if (!type) {
+    throw new Error('type required');
+  }
+  console.log("let data = "+dataStr+"; return " + hiddenFx);
+  let hidden = false;
+  try{
+	  hidden = Function("let data = "+dataStr+"; return " + hiddenFx).call()
+  }catch(err) {
+	  hidden = false;
+  }
+  let fieldClass = hidden ? 'fjs-form-field hidden' :  'fjs-form-field';
+  const classes = [
+    fieldClass,
+    `fjs-form-field-${ type }`,
+	
+  ];
+  console.log(fieldClass);
+
+  if (errors.length) {
+    classes.push('fjs-has-errors');
+  }
+
+  return classes.join(' ');
+}
+
 
 export function prefixId(id, formId) {
   if (formId) {
