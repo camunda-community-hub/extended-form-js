@@ -36,6 +36,10 @@ const types = [
   {
     label: 'Button',
     type: 'button'
+  },
+  {
+    label: 'Date Field',
+    type: 'datefield'
   }
 ];
 
@@ -57,7 +61,7 @@ export default function Palette(props) {
               title={ `Create a ${ label } element` }
             >
               {
-                Icon ? <Icon class="fjs-palette-field-icon" width="36" height="36" viewBox="0 0 54 54" /> : null
+                Icon ? Icon.name=="DateFieldIcon" ? <Icon class="fjs-palette-field-icon" width="36" height="36" /> : <Icon class="fjs-palette-field-icon" width="36" height="36" viewBox="0 0 54 54" /> : null
               }
               <span class="fjs-palette-field-text fjs-hide-compact">{ label }</span>
             </div>

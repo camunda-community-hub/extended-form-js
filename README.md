@@ -4,6 +4,12 @@
 
 [View](./packages/form-js-viewer) and [visually edit](./packages/form-js-editor) JSON-based forms.
 
+## local dev
+You should install cross-env
+```
+npm install
+npm install --save-dev cross-env
+```
 
 ## Usage
 

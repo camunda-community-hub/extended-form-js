@@ -9,6 +9,7 @@ import Select from './form-fields/Select';
 import Taglist from './form-fields/Taglist';
 import Text from './form-fields/Text';
 import Textfield from './form-fields/Textfield';
+import Datefield from './form-fields/Datefield';
 
 export {
   Button,
@@ -21,7 +22,8 @@ export {
   Select,
   Taglist,
   Text,
-  Textfield
+  Textfield,
+  Datefield
 };
 
 export const formFields = [
@@ -34,5 +36,6 @@ export const formFields = [
   Select,
   Taglist,
   Text,
-  Textfield
+  Textfield,
+  Datefield
 ];

@@ -134,6 +134,7 @@
 
 .fjs-container .fjs-input[type='text'],
 .fjs-container .fjs-input[type='number'],
+.fjs-container .fjs-input[type='date'],
 .fjs-container .fjs-button[type='submit'],
 .fjs-container .fjs-button[type='reset'],
 .fjs-container .fjs-textarea,
