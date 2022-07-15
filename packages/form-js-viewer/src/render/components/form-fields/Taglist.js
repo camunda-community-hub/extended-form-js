@@ -9,7 +9,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -32,7 +32,8 @@ export default function Taglist(props) {
     description,
     id,
     label,
-    values : options
+    values : options,
+	hiddenFx
   } = field;
 
   const { formId } = useContext(FormContext);
@@ -98,7 +99,7 @@ export default function Taglist(props) {
     }
   };
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       label={ label }
       id={ prefixId(id, formId) } />
@@ -159,3 +160,4 @@ Taglist.type = type;
 Taglist.label = 'Taglist';
 Taglist.keyed = true;
 Taglist.emptyValue = [];
+Taglist.hiddenFx = 'false';

@@ -1,7 +1,7 @@
 import Markup from 'preact-markup';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   safeMarkdown
 } from '../Util';
 
@@ -11,9 +11,9 @@ const type = 'text';
 export default function Text(props) {
   const { field } = props;
 
-  const { text = '' } = field;
+  const { text = '', hiddenFx } = field;
 
-  return <div class={ formFieldClasses(type) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx) }>
     <Markup markup={ safeMarkdown(text) } trim={ false } />
   </div>;
 }
@@ -27,3 +27,4 @@ Text.create = function(options = {}) {
 
 Text.type = type;
 Text.keyed = false;
+Text.hiddenFx = 'false';

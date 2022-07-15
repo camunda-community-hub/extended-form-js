@@ -1,4 +1,4 @@
-import { formFieldClasses } from '../Util';
+import { formFieldClassesCustom } from '../Util';
 
 const type = 'button';
 
@@ -9,9 +9,12 @@ export default function Button(props) {
     field
   } = props;
 
-  const { action = 'submit' } = field;
+  const { 
+	action = 'submit',
+	hiddenFx
+  } = field;
 
-  return <div class={ formFieldClasses(type) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx)}>
     <button class="fjs-button" type={ action } disabled={ disabled }>{ field.label }</button>
   </div>;
 }
@@ -27,3 +30,4 @@ Button.create = function(options = {}) {
 Button.type = type;
 Button.label = 'Button';
 Button.keyed = true;
+Button.hiddenFx = 'false';

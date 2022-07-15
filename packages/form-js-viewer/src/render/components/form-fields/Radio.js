@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -27,7 +27,8 @@ export default function Radio(props) {
     id,
     label,
     validate = {},
-    values
+    values,
+	hiddenFx
   } = field;
 
   const { required } = validate;
@@ -41,7 +42,7 @@ export default function Radio(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       label={ label }
       required={ required } />
@@ -85,3 +86,4 @@ Radio.type = type;
 Radio.label = 'Radio';
 Radio.keyed = true;
 Radio.emptyValue = null;
+Radio.hiddenFx = 'false';

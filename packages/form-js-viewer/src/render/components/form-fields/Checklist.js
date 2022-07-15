@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -26,7 +26,8 @@ export default function Checklist(props) {
     description,
     id,
     label,
-    values
+    values,
+	hiddenFx
   } = field;
 
   const toggleCheckbox = (v) => {
@@ -47,7 +48,7 @@ export default function Checklist(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       label={ label } />
     {
@@ -90,3 +91,4 @@ Checklist.type = type;
 Checklist.label = 'Checklist';
 Checklist.keyed = true;
 Checklist.emptyValue = [];
+Checklist.hiddenFx = 'false';

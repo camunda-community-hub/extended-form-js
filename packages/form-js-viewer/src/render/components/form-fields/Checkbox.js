@@ -7,7 +7,7 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
-  formFieldClasses,
+  formFieldClassesCustom,
   prefixId
 } from '../Util';
 
@@ -25,7 +25,8 @@ export default function Checkbox(props) {
   const {
     description,
     id,
-    label
+    label,
+	hiddenFx
   } = field;
 
   const onChange = ({ target }) => {
@@ -37,7 +38,7 @@ export default function Checkbox(props) {
 
   const { formId } = useContext(FormContext);
 
-  return <div class={ formFieldClasses(type, errors) }>
+  return <div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
@@ -65,3 +66,4 @@ Checkbox.type = type;
 Checkbox.label = 'Checkbox';
 Checkbox.keyed = true;
 Checkbox.emptyValue = false;
+Checkbox.hiddenFx = 'false';
