@@ -8,7 +8,8 @@ import {
   GeneralGroup,
   ValidationGroup,
   IntegrationGroup,
-  ValuesGroup
+  ValuesGroup,
+  TableGroup
 } from './groups';
 
 import {
@@ -26,7 +27,8 @@ function getGroups(field, editField) {
     IntegrationGroup(field, editField),
     ValuesGroup(field, editField),
     ValidationGroup(field, editField),
-    CustomValuesGroup(field, editField)
+    CustomValuesGroup(field, editField),
+	TableGroup(field, editField)
   ];
   // contract: if a group returns null, it should not be displayed at all
   return groups.filter(group => group !== null);

@@ -10,6 +10,7 @@ import SelectIcon from './Select.svg';
 import TextIcon from './Text.svg';
 import TextfieldIcon from './Textfield.svg';
 import DateFieldIcon from './Datefield.svg';
+import TableIcon from './table.svg';
 
 export const iconsByType = {
   button: ButtonIcon,
@@ -23,5 +24,6 @@ export const iconsByType = {
   text: TextIcon,
   textfield: TextfieldIcon,
   datefield: DateFieldIcon,
+  table: TableIcon,
   default: FormIcon
 };

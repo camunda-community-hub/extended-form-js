@@ -10,6 +10,7 @@ import Taglist from './form-fields/Taglist';
 import Text from './form-fields/Text';
 import Textfield from './form-fields/Textfield';
 import Datefield from './form-fields/Datefield';
+import Table from './form-fields/Table';
 
 export {
   Button,
@@ -23,7 +24,8 @@ export {
   Taglist,
   Text,
   Textfield,
-  Datefield
+  Datefield,
+  Table
 };
 
 export const formFields = [
@@ -37,5 +39,6 @@ export const formFields = [
   Taglist,
   Text,
   Textfield,
-  Datefield
+  Datefield,
+  Table
 ];

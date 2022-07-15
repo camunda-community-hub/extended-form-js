@@ -42,7 +42,8 @@ export const INPUTS = [
   'select',
   'taglist',
   'textfield',
-  'datefield'
+  'datefield',
+  'table'
 ];
 
 export const OPTIONS_INPUTS = [

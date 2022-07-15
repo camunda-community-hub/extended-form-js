@@ -17,6 +17,7 @@ const labelsByType = {
   text: 'TEXT',
   textfield: 'TEXT FIELD',
   datefield: 'DATEFIELD',
+  table: 'TABLE',
 };
 
 export const PropertiesPanelHeaderProvider = {

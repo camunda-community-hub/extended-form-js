@@ -344,3 +344,20 @@
 .fjs-form-editor .hidden {
 	display: inline;
 }
+
+.fjs-form-field-table table {
+	width: 100%;
+	box-shadow: 0 0 1px gray;
+	border-radius: 3px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.fjs-form-field-table table thead {
+	background: lightblue;
+}
+.fjs-form-field-table table th,
+.fjs-form-field-table table td {
+	padding: 8px;
+}
+.fjs-form-field-table table tbody tr:nth-child(even) {background: #eee}
