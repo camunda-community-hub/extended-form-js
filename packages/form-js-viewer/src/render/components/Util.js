@@ -26,12 +26,10 @@ export function formFieldClassesCustom(type, hiddenFx, errors = []) {
 
   const form = useService('form');
   let dataStr = JSON.stringify(form._getState().data);
-  console.log(form);
 
   if (!type) {
     throw new Error('type required');
   }
-  console.log("let data = "+dataStr+"; return " + hiddenFx);
   let hidden = false;
   try{
 	  hidden = Function("let data = "+dataStr+"; return " + hiddenFx).call()
@@ -44,7 +42,6 @@ export function formFieldClassesCustom(type, hiddenFx, errors = []) {
     `fjs-form-field-${ type }`,
 	
   ];
-  console.log(fieldClass);
 
   if (errors.length) {
     classes.push('fjs-has-errors');

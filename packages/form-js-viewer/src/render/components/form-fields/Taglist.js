@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'preact/hooks';
+import { useContext, useEffect, useRef, useState, useCallback } from 'preact/hooks';
 
 import { FormContext } from '../../context';
 
@@ -32,6 +32,7 @@ export default function Taglist(props) {
     description,
     id,
     label,
+	dataSource,
     values : options,
 	hiddenFx
   } = field;
@@ -45,20 +46,35 @@ export default function Taglist(props) {
   const [ escapeClose, setEscapeClose ] = useState(false);
   const searchbarRef = useRef();
 
+  const [myOptions, myOptionsSet] = useState([]);
+
+  const fetchMyAPI = useCallback(async () => {
+      if (dataSource && dataSource.length>0) {
+		  let response = await fetch(dataSource);
+		  response = await response.json();
+		  myOptionsSet(response);
+	  } else {
+		  myOptionsSet(options);
+	  }
+  }, [dataSource]) // if dataSource changes, useEffect will run again
+
+  useEffect(() => {
+    fetchMyAPI()
+  }, [fetchMyAPI])
 
   // Usage of stringify is necessary here because we want this effect to only trigger when there is a value change to the array
   useEffect(() => {
-    const selectedValues = values.map(v => options.find(o => o.value === v)).filter(v => v !== undefined);
+    const selectedValues = values.map(v => myOptions.find(o => o.value === v)).filter(v => v !== undefined);
     setSelectedValues(selectedValues);
-  }, [ JSON.stringify(values), options ]);
+  }, [ JSON.stringify(values), myOptions ]);
 
   useEffect(() => {
-    setFilteredValues(options.filter((o) => o.label && (o.label.toLowerCase().includes(filter.toLowerCase())) && !values.includes(o.value)));
-  }, [ filter, JSON.stringify(values), options ]);
+    setFilteredValues(myOptions.filter((o) => o.label && (o.label.toLowerCase().includes(filter.toLowerCase())) && !values.includes(o.value)));
+  }, [ filter, JSON.stringify(values), myOptions ]);
 
   useEffect(() => {
-    setHasValuesLeft(selectedValues.length < options.length);
-  }, [ selectedValues.length, options.length ]);
+    setHasValuesLeft(selectedValues.length < myOptions.length);
+  }, [ selectedValues.length, myOptions.length ]);
 
   const onFilterChange = ({ target }) => {
     setEscapeClose(false);
@@ -144,7 +160,7 @@ export default function Taglist(props) {
   </div>;
 }
 
-Taglist.create = function(options = {}) {
+Taglist.create = function(myOptions = {}) {
   return {
     values: [
       {
@@ -152,7 +168,7 @@ Taglist.create = function(options = {}) {
         value: 'value'
       }
     ],
-    ...options
+    ...myOptions
   };
 };
 

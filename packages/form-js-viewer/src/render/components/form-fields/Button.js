@@ -11,7 +11,9 @@ export default function Button(props) {
 
   const { 
 	action = 'submit',
-	hiddenFx
+	hiddenFx,
+	targetApi,
+	targetApiVerb
   } = field;
 
   return <div class={ formFieldClassesCustom(type, hiddenFx)}>

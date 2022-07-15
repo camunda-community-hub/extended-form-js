@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useCallback } from "react";
+
 import { useContext } from 'preact/hooks';
 
 import { FormContext } from '../../context';
@@ -27,8 +29,25 @@ export default function Checklist(props) {
     id,
     label,
     values,
+	dataSource,
 	hiddenFx
   } = field;
+  
+  const [myValues, myValuesSet] = useState([]);
+
+  const fetchMyAPI = useCallback(async () => {
+      if (dataSource && dataSource.length>0) {
+		  let response = await fetch(dataSource);
+		  response = await response.json();
+		  myValuesSet(response);
+	  } else {
+		  myValuesSet(values);
+	  }
+  }, [dataSource]) // if dataSource changes, useEffect will run again
+
+  useEffect(() => {
+    fetchMyAPI()
+  }, [fetchMyAPI])
 
   const toggleCheckbox = (v) => {
 
@@ -52,7 +71,7 @@ export default function Checklist(props) {
     <Label
       label={ label } />
     {
-      values.map((v, index) => {
+      myValues.map((v, index) => {
         return (
           <Label
             id={ prefixId(`${id}-${index}`, formId) }

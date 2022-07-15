@@ -1,3 +1,5 @@
+import React, { useState, useEffect, useCallback } from "react";
+
 import { useContext } from 'preact/hooks';
 
 import { FormContext } from '../../context';
@@ -27,10 +29,27 @@ export default function Select(props) {
     label,
 	hiddenFx,
     validate = {},
+	dataSource,
     values
   } = field;
 
   const { required } = validate;
+
+  const [myValues, myValuesSet] = useState([]);
+
+  const fetchMyAPI = useCallback(async () => {
+      if (dataSource && dataSource.length>0) {
+		  let response = await fetch(dataSource);
+		  response = await response.json();
+		  myValuesSet(response);
+	  } else {
+		  myValuesSet(values);
+	  }
+  }, [dataSource]) // if dataSource changes, useEffect will run again
+
+  useEffect(() => {
+    fetchMyAPI()
+  }, [fetchMyAPI])
 
   const onChange = ({ target }) => {
     props.onChange({
@@ -54,7 +73,7 @@ export default function Select(props) {
       value={ value || '' }>
       <option value=""></option>
       {
-        values.map((v, index) => {
+        myValues.map((v, index) => {
           return (
             <option
               key={ `${ id }-${ index }` }
