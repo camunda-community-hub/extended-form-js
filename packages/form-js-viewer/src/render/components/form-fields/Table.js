@@ -14,6 +14,12 @@ import {
 
 const type = 'table';
 
+export function tableClasses(type, hiddenFx, length) {
+	
+  let classes = formFieldClassesCustom(type, hiddenFx, []);
+
+  return classes+' table'+length;
+}
 
 export default function Table(props) {
   const {
@@ -29,23 +35,54 @@ export default function Table(props) {
     label,
 	hiddenFx,
 	headers,
-	headersTypes,
+	headersNames,
 	editableColumns,
     validate = {}
   } = field;
 
   const { required } = validate;
-
-  const onChange = ({ target }) => {
-    props.onChange({
-      field,
-      value: target.value
-    });
-  };
-
+  const headersArray = headers ? headers.split(",") : [];
+  const headersNamesArray = headersNames ? headersNames.split(",") : [];
+  const editableColumnsArray = editableColumns ? editableColumns.split(",") : [];
+  const editableMap = {};
+  //build the editableMap
+  for(let i=0; i<editableColumnsArray.length;i++) {
+	let col = editableColumnsArray[i].trim();
+	let type = "text";
+	let colAndType = col.match(/([a-z0-9]+)[ ]*\[([a-z]+)\]/i);
+	if (colAndType!=null) {
+		col = colAndType[1];
+		type = colAndType[2];
+	}
+	editableMap[col]=type;
+  }	  
   const { formId } = useContext(FormContext);
 
-  return (<div class={ formFieldClassesCustom(type, hiddenFx, errors) }>
+
+  const onChange = ( index, col, newValue) => {
+	value[index][col] = newValue;
+    props.onChange({
+      field,
+      value: value
+    });
+  };
+  
+
+  const getInput = (col, type, index) => {
+	  return type=='boolean' || type=='bool' ?
+	  <input
+        checked={ value[index][col] }
+        class="fjs-table-checkbox"
+        type="checkbox"
+        onChange={ e => onChange(index, col, e.target.checked) } /> :
+	  <input
+		  class="fjs-table-input"
+		  onInput={ e => onChange(index, col, e.target.value) }
+		  type= { type }
+		  value={ value[index][col] } />
+   }
+
+  return (<div class={ tableClasses(type, hiddenFx, headersArray.length) }>
     <Label
       id={ prefixId(id, formId) }
       label={ label }
@@ -55,7 +92,7 @@ export default function Table(props) {
       <thead>
         <tr>
 		  {
-            headers && headers.map((header) => (
+            headersNamesArray.map((header) => (
               <th>{header.trim()}</th>
             ))
           }
@@ -63,11 +100,11 @@ export default function Table(props) {
       </thead>
       <tbody>
         {
-          value && value.map((row) => (
+          value && value.map((row, index) => (
             <tr>
 			  {
-				headers && headers.map((header) => (
-                  <td>{row[header.trim()]}</td>
+				headersArray.map((header) => (
+                  <td>{editableMap[header.trim()] ? getInput(header.trim(), editableMap[header.trim()], index) : row[header.trim()]}</td>
                 ))
 			  }
             </tr>

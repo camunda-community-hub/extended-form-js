@@ -25,13 +25,13 @@ export default function TableGroup(field, editField) {
   }
   
   const setHeaders = (value) => {
-    return editField(field, 'headers', value.split(","));
+    return editField(field, 'headers', value);
   };
-  const setHeadersTypes = (value) => {
-    return editField(field, 'headersTypes', value.split(","));
+  const setHeadersNames = (value) => {
+    return editField(field, 'headersNames', value);
   };
   const setEditableColumns = (value) => {
-    return editField(field, 'editableColumns', value.split(","));
+    return editField(field, 'editableColumns', value);
   };
 
   const getValue = (key) => {
@@ -49,12 +49,12 @@ export default function TableGroup(field, editField) {
         setHeaders
       },
 	  {
-        id: 'headersTypes',
-        component: HeadersTypes,
+        id: 'headersNames',
+        component: HeadersNames,
         getValue,
         field,
         isEdited: isTextFieldEntryEdited,
-        setHeadersTypes
+        setHeadersNames
 	  },
 	  {
         id: 'editableColumns',
@@ -93,12 +93,12 @@ function Headers(props) {
   });
 }
 
-function HeadersTypes(props) {
+function HeadersNames(props) {
   const {
     field,
     getValue,
     id,
-    setHeadersTypes
+    setHeadersNames
   } = props;
 
   const debounce = useService('debounce');
@@ -106,10 +106,10 @@ function HeadersTypes(props) {
   return TextFieldEntry({
     debounce,
     element: field,
-    getValue: getValue('headersTypes'),
+    getValue: getValue('headersNames'),
     id,
-    label: 'Header types (coma separated)',
-    setValue: setHeadersTypes
+    label: 'Header names (coma separated)',
+    setValue: setHeadersNames
   });
 }
 
@@ -128,7 +128,7 @@ function EditableColumns(props) {
     element: field,
     getValue: getValue('editableColumns'),
     id,
-    label: 'Editable columns (booleans coma sep)',
+    label: 'Editable cols (header[type], header2[type])',
     setValue: setEditableColumns
   });
 }
