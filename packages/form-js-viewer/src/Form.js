@@ -218,14 +218,27 @@ export default class Form {
           validator = this.get('validator');
 
     const { data } = this._getState();
-
+	let dataStr = JSON.stringify(data);
     const errors = formFieldRegistry.getAll().reduce((errors, field) => {
+	  
       const {
         disabled,
+        hiddenFx,
         _path
       } = field;
 
       if (disabled) {
+        return errors;
+      }
+	  
+	  
+	  let hidden = false;
+	  try{
+		hidden = Function("let data = "+dataStr+"; return " + hiddenFx).call()
+	  } catch(err) {
+		hidden = false;
+	  }
+	  if (hidden) {
         return errors;
       }
 
