@@ -26,7 +26,7 @@ export default function Table(props) {
     disabled,
     errors = [],
     field,
-    value = ''
+    value = []
   } = props;
 
   const {
@@ -37,6 +37,7 @@ export default function Table(props) {
 	headers,
 	headersNames,
 	editableColumns,
+	dynamicRows,
     validate = {}
   } = field;
 
@@ -82,6 +83,28 @@ export default function Table(props) {
 		  value={ value[index][col] } />
    }
 
+  const remove = (index) => {
+	value.splice(index, 1);
+    props.onChange({
+      field,
+      value: value
+    });
+  }; 
+  const add = () => {
+	if (!Array.isArray(value)) {
+		props.onChange({
+		  field,
+		  value: [{}]
+		});
+	} else {
+		value.push({});
+		props.onChange({
+		  field,
+		  value: value
+		});
+	}
+  };
+
   return (<div class={ tableClasses(type, hiddenFx, headersArray.length) }>
     <Label
       id={ prefixId(id, formId) }
@@ -96,6 +119,9 @@ export default function Table(props) {
               <th>{header.trim()}</th>
             ))
           }
+		  {
+			  dynamicRows ? <th></th> : null
+		  }
         </tr>
       </thead>
       <tbody>
@@ -107,10 +133,25 @@ export default function Table(props) {
                   <td>{editableMap[header.trim()] ? getInput(header.trim(), editableMap[header.trim()], index) : row[header.trim()]}</td>
                 ))
 			  }
+			  { 
+				dynamicRows ? <td class="actions"><button class="btn btn-danger" onClick={ () => remove(index) }> - </button></td> : null
+			  }
             </tr>
           ))
         }
       </tbody>
+	  { 
+        dynamicRows ? 
+		<tfoot><tr>
+		  {
+			headersNamesArray.map((header) => (
+              <td></td>
+            ))
+		  }
+		  <td class="actions"><button class="btn btn-primary" onClick={ () => add() }> + </button></td>
+		</tr></tfoot>
+		: null
+	  }
     </table>
     
     <Description description={ description } />

@@ -33,6 +33,9 @@ export default function TableGroup(field, editField) {
   const setEditableColumns = (value) => {
     return editField(field, 'editableColumns', value);
   };
+  const setDynamicRows = (value) => {
+    return editField(field, 'dynamicRows', value);
+  };
 
   const getValue = (key) => {
     return () => {
@@ -63,6 +66,14 @@ export default function TableGroup(field, editField) {
         field,
         isEdited: isTextFieldEntryEdited,
         setEditableColumns
+	  },
+	  {
+        id: 'dynamicRows',
+        component: DynamicRows,
+        getValue,
+        field,
+        isEdited: isCheckboxEntryEdited,
+        setDynamicRows
 	  }
   ];
 
@@ -130,5 +141,25 @@ function EditableColumns(props) {
     id,
     label: 'Editable cols (header[type], header2[type])',
     setValue: setEditableColumns
+  });
+}
+
+function DynamicRows(props) {
+  const {
+    field,
+    getValue,
+    id,
+    setDynamicRows
+  } = props;
+
+  const debounce = useService('debounce');
+
+  return CheckboxEntry({
+    debounce,
+    element: field,
+    getValue: getValue('dynamicRows'),
+    id,
+    label: 'Dynamic rows',
+    setValue: setDynamicRows
   });
 }
