@@ -21,11 +21,13 @@ export function formFieldClasses(type, errors = []) {
   return classes.join(' ');
 }
 
-export function formFieldClassesCustom(type, hiddenFx, errors = []) {
-	
-
+export function getDataAsJson() {
   const form = useService('form');
-  let dataStr = JSON.stringify(form._getState().data);
+  return JSON.stringify(form._getState().data);
+}
+
+export function formFieldClassesCustom(type, hiddenFx, errors = []) {
+  let dataStr = getDataAsJson();
 
   if (!type) {
     throw new Error('type required');
@@ -48,6 +50,23 @@ export function formFieldClassesCustom(type, hiddenFx, errors = []) {
   }
 
   return classes.join(' ');
+}
+
+
+
+export function getDatasource(datasource) {
+	if (!datasource.includes('${data')) {
+		return datasource;
+	}
+		  
+    let dataStr = getDataAsJson();
+
+	try{
+      let transform = '"'+datasource.replace('${','"+').replace('}','+"')+'"';
+	  let result = Function("let data = "+dataStr+"; return " + transform+";").call();
+	}catch(err) {
+	  return datasource
+	}
 }
 
 

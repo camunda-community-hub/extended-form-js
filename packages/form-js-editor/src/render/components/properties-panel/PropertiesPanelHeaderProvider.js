@@ -18,6 +18,7 @@ const labelsByType = {
   textfield: 'TEXT FIELD',
   datefield: 'DATEFIELD',
   table: 'TABLE',
+  fileUpload: 'FILE UPLOAD'
 };
 
 export const PropertiesPanelHeaderProvider = {

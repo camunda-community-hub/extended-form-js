@@ -11,6 +11,7 @@ import Text from './form-fields/Text';
 import Textfield from './form-fields/Textfield';
 import Datefield from './form-fields/Datefield';
 import Table from './form-fields/Table';
+import FileUpload from './form-fields/FileUpload';
 
 export {
   Button,
@@ -25,7 +26,8 @@ export {
   Text,
   Textfield,
   Datefield,
-  Table
+  Table,
+  FileUpload
 };
 
 export const formFields = [
@@ -40,5 +42,6 @@ export const formFields = [
   Text,
   Textfield,
   Datefield,
-  Table
+  Table,
+  FileUpload
 ];

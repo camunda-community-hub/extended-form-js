@@ -43,7 +43,8 @@ export const INPUTS = [
   'taglist',
   'textfield',
   'datefield',
-  'table'
+  'table',
+  'fileUpload'
 ];
 
 export const OPTIONS_INPUTS = [

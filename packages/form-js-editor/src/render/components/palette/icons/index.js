@@ -11,6 +11,7 @@ import TextIcon from './Text.svg';
 import TextfieldIcon from './Textfield.svg';
 import DateFieldIcon from './Datefield.svg';
 import TableIcon from './table.svg';
+import FileUploadIcon from './fileUpload.svg';
 
 export const iconsByType = {
   button: ButtonIcon,
@@ -25,5 +26,6 @@ export const iconsByType = {
   textfield: TextfieldIcon,
   datefield: DateFieldIcon,
   table: TableIcon,
+  fileUpload: FileUploadIcon,
   default: FormIcon
 };

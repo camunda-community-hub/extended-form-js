@@ -9,6 +9,8 @@ import Errors from '../Errors';
 import Label from '../Label';
 
 import {
+  getDataAsJson,
+  getDatasource,
   formFieldClassesCustom,
   prefixId
 } from '../Util';
@@ -36,12 +38,29 @@ export default function Select(props) {
   const { required } = validate;
 
   const [myValues, myValuesSet] = useState([]);
+  
+
+  let dataFormStr = getDataAsJson();
+  console.log(dataFormStr);
 
   const fetchMyAPI = useCallback(async () => {
       if (dataSource && dataSource.length>0) {
-		  let response = await fetch(dataSource);
-		  response = await response.json();
-		  myValuesSet(response);
+		  let computedDs = dataSource;
+		  if (dataSource.includes('${data')) {
+			try{
+			  let transform = '"'+dataSource.replace('${','"+').replace('}','+"')+'"';
+			  computedDs = Function("let data = "+dataFormStr+"; return " + transform+";").call();
+			}catch(err) {
+			  console.log(err);
+			}
+		  }
+		  try {
+			  let response = await fetch(computedDs);
+			  response = await response.json();
+			  myValuesSet(response);
+		  } catch(err) {
+			myValuesSet(values);
+		  }
 	  } else {
 		  myValuesSet(values);
 	  }
