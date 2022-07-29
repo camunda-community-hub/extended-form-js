@@ -20,7 +20,7 @@ import { INPUTS, OPTIONS_INPUTS } from '../Util';
 export default function IntegrationGroup(field, editField) {
   const { type } = field;
 
-  if (!OPTIONS_INPUTS.includes(type) && type !== 'button') {
+  if (!OPTIONS_INPUTS.includes(type) && type !== 'button' && type !== 'fileUpload') {
     return null;
   }
   
@@ -43,7 +43,7 @@ export default function IntegrationGroup(field, editField) {
   let entries = [
   ];
 
-  if (type === 'button') {
+  if (type === 'button' || type==='fileUpload') {
     entries.push(
       {
         id: 'targetApi',
