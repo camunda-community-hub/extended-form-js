@@ -41,7 +41,6 @@ export default function Select(props) {
   
 
   let dataFormStr = getDataAsJson();
-  console.log(dataFormStr);
 
   const fetchMyAPI = useCallback(async () => {
       if (dataSource && dataSource.length>0) {

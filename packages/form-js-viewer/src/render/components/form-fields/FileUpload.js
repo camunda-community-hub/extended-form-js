@@ -45,7 +45,7 @@ export default function FileUpload(props) {
         body: formData
     };
 	fetch(targetApi, requestOptions).then((response) => {
-		 response.ok ? response.json().then(json => { console.log(json)
+		 response.ok ? response.json().then(json => {
 		props.onChange({
 		  field,
 		  value: json
