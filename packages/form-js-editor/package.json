@@ -1,7 +1,7 @@
 {
   "name": "@camunda-community/form-js-editor",
   "version": "0.7.3",
-  "description": "Edit forms - powered by bpmn.io",
+  "description": "Extended version. Edit forms - powered by bpmn.io",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
