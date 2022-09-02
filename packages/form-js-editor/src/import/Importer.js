@@ -1,4 +1,4 @@
-import { clone } from '@bpmn-io/form-js-viewer';
+import { clone } from '@camunda-community/form-js-viewer';
 
 
 export default class Importer {

@@ -1,6 +1,6 @@
 import {
   FormFieldRegistry as BaseFieldRegistry
-} from '@bpmn-io/form-js-viewer';
+} from '@camunda-community/form-js-viewer';
 
 
 export default class FormFieldRegistry extends BaseFieldRegistry {

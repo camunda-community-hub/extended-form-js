@@ -1,4 +1,4 @@
-# @bpmn-io/form-js-viewer
+# @camunda-community/form-js-viewer
 
 This library exports a form viewer for viewing and submitting forms. Use [our editor](../form-js-editor) to create and edit forms.
 
@@ -6,14 +6,14 @@ This library exports a form viewer for viewing and submitting forms. Use [our ed
 ## Installation
 
 ```
-npm install @bpmn-io/form-js-viewer
+npm install @camunda-community/form-js-viewer
 ```
 
 
 ## Usage
 
 ```javascript
-import { Form } from '@bpmn-io/form-js-viewer';
+import { Form } from '@camunda-community/form-js-viewer';
 
 const schema = {
   components: [
@@ -53,7 +53,7 @@ For proper styling include the `form-js.css` stylesheet and font used:
 ```html
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<link href="https://unpkg.com/@bpmn-io/form-js/dist/assets/form-js.css" rel="stylesheet">
+<link href="https://unpkg.com/@camunda-community/form-js/dist/assets/form-js.css" rel="stylesheet">
 ```
 
 
@@ -64,7 +64,7 @@ For proper styling include the `form-js.css` stylesheet and font used:
 Create a new form with options `{ container?: HTMLElement }`.
 
 ```javascript
-import { Form } from '@bpmn-io/form-js-viewer';
+import { Form } from '@camunda-community/form-js-viewer';
 
 const form = new Form({
   container: document.querySelector('#form')

@@ -1,4 +1,4 @@
-import { clone, createFormContainer, createInjector, schemaVersion } from '@bpmn-io/form-js-viewer';
+import { clone, createFormContainer, createInjector, schemaVersion } from '@camunda-community/form-js-viewer';
 import Ids from 'ids';
 import { isString, set } from 'min-dash';
 

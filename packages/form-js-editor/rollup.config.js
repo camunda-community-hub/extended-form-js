@@ -62,7 +62,7 @@ export default [
       'preact/hooks',
       'preact/compat',
       'dragula',
-      '@bpmn-io/form-js-viewer'
+      '@camunda-community/form-js-viewer'
     ],
     plugins: pgl([
       copy({

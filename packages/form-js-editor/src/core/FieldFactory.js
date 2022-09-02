@@ -4,7 +4,7 @@ export default class FieldFactory {
    * @constructor
    *
    * @param { import('./FormFieldRegistry').default } formFieldRegistry
-   * @param { import('@bpmn-io/form-js-viewer').FormFields } formFields
+   * @param { import('@camunda-community/form-js-viewer').FormFields } formFields
    */
   constructor(formFieldRegistry, formFields) {
     this._formFieldRegistry = formFieldRegistry;

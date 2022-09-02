@@ -2,4 +2,4 @@ export {
   createForm,
   Form,
   schemaVersion
-} from '@bpmn-io/form-js-viewer';
+} from '@camunda-community/form-js-viewer';

@@ -48,7 +48,7 @@ export default [
       'file-drops',
       'mitt',
       'downloadjs',
-      '@bpmn-io/form-js',
+      '@camunda-community/form-js',
       'preact/jsx-runtime',
       '@codemirror/basic-setup',
       '@codemirror/state',

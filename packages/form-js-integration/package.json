@@ -1,18 +1,18 @@
 {
-  "name": "@bpmn-io/form-js-integration",
+  "name": "@camunda-community/form-js-integration",
   "version": "0.7.2",
   "description": "A set of form-js integration testing resources",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bpmn-io/form-js.git",
+    "url": "git+https://github.com/camunda-community-hub-hub/extended-form-js.git",
     "directory": "packages/form-js-integration"
   },
   "author": {
     "name": "bpmn.io contributors",
-    "url": "https://github.com/bpmn-io"
+    "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@bpmn-io/form-js": "^0.7.2"
+    "@camunda-community/form-js": "^0.7.2"
   }
 }

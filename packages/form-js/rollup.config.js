@@ -22,14 +22,14 @@ export default [
       }
     ],
     external: [
-      '@bpmn-io/form-js-viewer',
-      '@bpmn-io/form-js-editor'
+      '@camunda-community/form-js-viewer',
+      '@camunda-community/form-js-editor'
     ],
     plugins: [
       copy({
         targets: [
-          { src: 'node_modules/@bpmn-io/form-js-viewer/dist/assets/**/*.css', dest: 'dist/assets' },
-          { src: 'node_modules/@bpmn-io/form-js-editor/dist/assets/**/*.css', dest: 'dist/assets' }
+          { src: 'node_modules/@camunda-community/form-js-viewer/dist/assets/**/*.css', dest: 'dist/assets' },
+          { src: 'node_modules/@camunda-community/form-js-editor/dist/assets/**/*.css', dest: 'dist/assets' }
         ]
       })
     ]

@@ -1,6 +1,6 @@
 import FormEditor from './FormEditor';
 
-import { schemaVersion } from '@bpmn-io/form-js-viewer';
+import { schemaVersion } from '@camunda-community/form-js-viewer';
 
 export {
   FormEditor,

@@ -1,8 +1,8 @@
-# @bpmn-io/form-js-playground
+# @camunda-community/form-js-playground
 
-[![CI](https://github.com/bpmn-io/form-js/workflows/CI/badge.svg)](https://github.com/bpmn-io/form-js/actions?query=workflow%3ACI)
+[![CI](https://github.com/camunda-community-hub/extended-form-js/workflows/CI/badge.svg)](https://github.com/camunda-community-hub/extended-form-js/actions?query=workflow%3ACI)
 
-A tool to try out and explore [@bpmn-io/form-js](../form-js) in a playful manner.
+A tool to try out and explore [@camunda-community/extended-form-js](../extended-form-js) in a playful manner.
 
 ![Playground Screenshot](./resources/screenshot.png)
 
@@ -12,13 +12,13 @@ A tool to try out and explore [@bpmn-io/form-js](../form-js) in a playful manner
 Integrate the playground into your application:
 
 ```javascript
-import '@bpmn-io/form-js/dist/assets/form-js.css';
-import '@bpmn-io/form-js/dist/assets/form-js-editor.css';
-import '@bpmn-io/form-js/dist/assets/dragula.css';
-import '@bpmn-io/form-js/dist/assets/properties-panel.css';
-import '@bpmn-io/form-js-playground/dist/assets/form-js-playground.css';
+import '@camunda-community/form-js/dist/assets/form-js.css';
+import '@camunda-community/form-js/dist/assets/form-js-editor.css';
+import '@camunda-community/form-js/dist/assets/dragula.css';
+import '@camunda-community/form-js/dist/assets/properties-panel.css';
+import '@camunda-community/form-js-playground/dist/assets/form-js-playground.css';
 
-import { Playground } from '@bpmn-io/form-js-playground';
+import { Playground } from '@camunda-community/form-js-playground';
 
 const playground = new Playground({
   container: document.querySelector('#container'),
@@ -35,7 +35,7 @@ const {
 ## Resources
 
 * [Demo](https://demo.bpmn.io/form)
-* [Issues](https://github.com/bpmn-io/form-js/issues)
+* [Issues](https://github.com/camunda-community-hub-hub/form-js/issues)
 
 
 ## License

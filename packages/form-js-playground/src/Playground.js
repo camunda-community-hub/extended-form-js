@@ -13,7 +13,7 @@ import download from 'downloadjs';
 import {
   Form,
   FormEditor
-} from '@bpmn-io/form-js';
+} from '@camunda-community/form-js';
 
 import './FileDrop.css';
 import './Playground.css';

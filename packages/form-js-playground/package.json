@@ -1,5 +1,5 @@
 {
-  "name": "@bpmn-io/form-js-playground",
+  "name": "@camunda-community/form-js-playground",
   "version": "0.7.2",
   "description": "A form-js playground",
   "files": [
@@ -29,15 +29,15 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bpmn-io/form-js.git",
+    "url": "git+https://github.com/camunda-community-hub/extended-form-js.git",
     "directory": "packages/form-js-playground"
   },
   "author": {
     "name": "bpmn.io contributors",
-    "url": "https://github.com/bpmn-io"
+    "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@bpmn-io/form-js": "^0.7.2",
+    "@camunda-community/form-js": "^0.7.2",
     "@codemirror/basic-setup": "^0.18.2",
     "@codemirror/lang-json": "^0.18.0",
     "@codemirror/state": "^0.18.7",

@@ -1,5 +1,5 @@
 {
-  "name": "@bpmn-io/form-js",
+  "name": "@camunda-community/form-js",
   "version": "0.7.2",
   "description": "View and edit forms - powered by bpmn.io",
   "exports": {
@@ -43,16 +43,16 @@
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bpmn-io/form-js.git",
+    "url": "git+https://github.com/camunda-community-hub/extended-form-js.git",
     "directory": "packages/form-js"
   },
   "author": {
     "name": "bpmn.io contributors",
-    "url": "https://github.com/bpmn-io"
+    "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@bpmn-io/form-js-editor": "^0.7.2",
-    "@bpmn-io/form-js-viewer": "^0.7.2"
+    "@camunda-community/form-js-editor": "^0.7.2",
+    "@camunda-community/form-js-viewer": "^0.7.2"
   },
   "sideEffects": [
     "*.css"

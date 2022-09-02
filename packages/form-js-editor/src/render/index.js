@@ -1,4 +1,4 @@
-import { FormFields } from '@bpmn-io/form-js-viewer';
+import { FormFields } from '@camunda-community/form-js-viewer';
 
 import Renderer from './Renderer';
 

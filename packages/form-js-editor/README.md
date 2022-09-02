@@ -1,4 +1,4 @@
-# @bpmn-io/form-js-editor
+# @camunda-community/form-js-editor
 
 An editor to create forms that can be displayed with the [form-js viewer](../form-js-viewer).
 
@@ -6,14 +6,14 @@ An editor to create forms that can be displayed with the [form-js viewer](../for
 ## Installation
 
 ```
-npm install @bpmn-io/form-js-editor
+npm install @camunda-community/form-js-editor
 ```
 
 
 ## Usage
 
 ```javascript
-import { FormEditor } from '@bpmn-io/form-js-editor';
+import { FormEditor } from '@camunda-community/form-js-editor';
 
 const schema = {
   components: [
@@ -35,7 +35,7 @@ const formEditor = new FormEditor({
 await formEditor.importSchema(schema);
 ```
 
-Check out [a full example](https://github.com/bpmn-io/form-js-examples).
+Check out [a full example](https://github.com/camunda-community-hub-hub-hub-hub-hub/form-js-examples).
 
 
 ## Styling
@@ -45,10 +45,10 @@ For proper styling include the necessary stylesheets, and font used:
 ```html
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://unpkg.com/@bpmn-io/form-js@0.2.3/dist/assets/form-js.css">
-<link rel="stylesheet" href="https://unpkg.com/@bpmn-io/form-js@0.2.3/dist/assets/form-js-editor.css">
-<link rel="stylesheet" href="https://unpkg.com/@bpmn-io/form-js@0.2.3/dist/assets/dragula.css">
-<link rel="stylesheet" href="https://unpkg.com/@bpmn-io/form-js@0.2.3/dist/assets/properties-panel.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda-community/form-js@0.2.3/dist/assets/form-js.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda-community/form-js@0.2.3/dist/assets/form-js-editor.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda-community/form-js@0.2.3/dist/assets/dragula.css">
+<link rel="stylesheet" href="https://unpkg.com/@camunda-community/form-js@0.2.3/dist/assets/properties-panel.css">
 ```
 
 
@@ -59,7 +59,7 @@ For proper styling include the necessary stylesheets, and font used:
 Create a new form editor with options `{ container?: HTMLElement }`.
 
 ```javascript
-import { FormEditor } from '@bpmn-io/form-js-editor';
+import { FormEditor } from '@camunda-community/form-js-editor';
 
 const formEditor = new FormEditor({
   container: document.querySelector('#form-editor')
