@@ -1,6 +1,6 @@
 {
   "name": "@camunda-community/form-js-viewer",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "Extended version. View forms - powered by bpmn.io",
   "exports": {
     ".": {
