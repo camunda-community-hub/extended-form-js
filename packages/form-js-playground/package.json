@@ -1,6 +1,6 @@
 {
   "name": "@camunda-community/form-js-playground",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "A form-js playground",
   "files": [
     "dist"
@@ -37,7 +37,7 @@
     "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@camunda-community/form-js": "^0.7.2",
+    "@camunda-community/form-js": "^0.7.3",
     "@codemirror/basic-setup": "^0.18.2",
     "@codemirror/lang-json": "^0.18.0",
     "@codemirror/state": "^0.18.7",

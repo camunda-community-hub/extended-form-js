@@ -1,6 +1,6 @@
 {
   "name": "@camunda-community/form-js-integration",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "A set of form-js integration testing resources",
   "private": true,
   "repository": {
@@ -13,6 +13,6 @@
     "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@camunda-community/form-js": "^0.7.2"
+    "@camunda-community/form-js": "^0.7.3"
   }
 }

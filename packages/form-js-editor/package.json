@@ -1,6 +1,6 @@
 {
   "name": "@camunda-community/form-js-editor",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "Edit forms - powered by bpmn.io",
   "exports": {
     ".": {
@@ -42,7 +42,7 @@
     "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@camunda-community/form-js-viewer": "^0.7.2",
+    "@camunda-community/form-js-viewer": "^0.7.3",
     "array-move": "^3.0.1",
     "dragula": "^3.7.3",
     "ids": "^1.0.0",
