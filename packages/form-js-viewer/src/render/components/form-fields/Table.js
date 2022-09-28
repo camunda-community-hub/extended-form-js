@@ -133,7 +133,7 @@ export default function Table(props) {
       </thead>
       <tbody>
         {
-          value && value.map((row, index) => (
+          value && Array.isArray(value) && value.map((row, index) => (
             <tr>
 			  {
 				headersArray.map((header) => (
