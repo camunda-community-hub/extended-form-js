@@ -45,6 +45,12 @@ export default function Table(props) {
   const headersArray = headers ? headers.split(",") : [];
   const headersNamesArray = headersNames ? headersNames.split(",") : [];
   const editableColumnsArray = editableColumns ? editableColumns.split(",") : [];
+  if (!Array.isArray(value)) {
+	  props.onChange({
+		  field,
+		  value: []
+		})
+  }
   const editableMap = {};
   //build the editableMap
   for(let i=0; i<editableColumnsArray.length;i++) {
@@ -58,6 +64,7 @@ export default function Table(props) {
 	editableMap[col]=type;
   }	  
   const { formId } = useContext(FormContext);
+
 
 
   const onChange = ( index, col, newValue) => {

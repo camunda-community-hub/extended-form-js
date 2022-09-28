@@ -1,8 +1,14 @@
-# @bpmn-io/form-js
 
-[![CI](https://github.com/bpmn-io/form-js/workflows/CI/badge.svg)](https://github.com/bpmn-io/form-js/actions?query=workflow%3ACI)
+
+# @camunda-community/form-js
+
+[![Community Extension](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community)
+![Compatible with: Camunda Platform 8](https://img.shields.io/badge/Compatible%20with-Camunda%20Platform%208-0072Ce)
+[![](https://img.shields.io/badge/Lifecycle-Incubating-blue)](https://github.com/Camunda-Community-Hub/community/blob/main/extension-lifecycle.md#incubating-)
 
 [View](./packages/form-js-viewer) and [visually edit](./packages/form-js-editor) JSON-based forms.
+
+Forked from [@bpmn-io/form-js](https://github.com/bpmn-io/form-js)
 
 ## local dev
 You should install cross-env. If you want to release, you should also install npm-run-all 
@@ -21,7 +27,7 @@ This library exports a [form viewer](./packages/form-js-viewer) and [editor](./p
 Renders a form based on [a form schema](./docs/FORM_SCHEMA.md) and existing data:
 
 ```javascript
-import { Form } from '@bpmn-io/form-js';
+import { Form } from '@camunda-community/form-js';
 
 const form = new Form({
   container: document.querySelector('#form')
@@ -42,7 +48,7 @@ See [viewer documentation](./packages/form-js-viewer) for further details.
 Create a new form or edit an exsting one:
 
 ```javascript
-import { FormEditor } from '@bpmn-io/form-js';
+import { FormEditor } from '@camunda-community/form-js';
 
 const formEditor = new FormEditor({
   container: document.querySelector('#form-editor')
@@ -65,3 +71,9 @@ See [editor documentation](./packages/form-js-editor) for further details.
 ## License
 
 Use under the terms of the [bpmn.io license](http://bpmn.io/license).
+
+## Release
+
+```
+npm run release
+```
