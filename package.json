@@ -19,7 +19,7 @@
     "lint:types": "tsc --noEmit --pretty",
     "postinstall": "lerna bootstrap --hoist",
     "reinstall": "npm ci",
-    "release": "run-s distro test \"lerna-publish -- {@}\" --",
+    "release": "run-s distro \"lerna-publish -- {@}\" --",
     "test": "lerna run test",
     "test:distro": "lerna run test:distro",
     "ci": "run-s all build-distro",
