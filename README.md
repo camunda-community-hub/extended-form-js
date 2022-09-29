@@ -10,6 +10,13 @@
 
 Forked from [@bpmn-io/form-js](https://github.com/bpmn-io/form-js)
 
+## New features
+ - New property "Should be hidden" in properties panel where you can use javascript expressions to hide components : data.myProcessVariable=='toHide'. Be sure to prefix your process variable with **data.**
+- Date picker component
+- You can populate select (drop down) and checklist options from webservices
+- FileUpload widget where you can define the target endpoint and HTTP verb
+- Table widget where you can display/edit and add rows (columns types can be defined)
+ 
 ## local dev
 You should install cross-env. If you want to release, you should also install npm-run-all 
 ```
