@@ -23,6 +23,10 @@ export default function IntegrationGroup(field, editField) {
   if (!OPTIONS_INPUTS.includes(type) && type !== 'button' && type !== 'fileUpload') {
     return null;
   }
+  if (type === 'fileUpload' && !field.targetApi) {
+	editField(field, 'targetApi', '/file/upload');
+	editField(field, 'targetApiVerb', 'POST');
+  }
   
   const setDataSource = (value) => {
     return editField(field, 'dataSource', value);

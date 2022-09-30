@@ -446,3 +446,80 @@
 .fjs-input-file-hidden {
 	display: none;
 }
+.fileViewer {
+	display: block;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1060;
+}
+
+.fjs-fileviewer-icon {
+	height: 25px;
+	position: absolute;
+	right:20px
+}
+
+
+/* modals */
+.modal-backdrop {
+    opacity: .5;
+    background-color: #000;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1040;
+}
+@media (min-width: 992px)
+.modal-dialog  {
+    max-width: 800px;
+}
+
+.modal-dialog {
+    margin: 1.75rem auto;
+    max-width: 500px;
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+    pointer-events: auto;
+    position: relative;
+}
+.modal-header {
+    align-items: center;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(0.3rem - 1px);
+    border-top-right-radius: calc(0.3rem - 1px);
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.modal-header .btn-close {
+    cursor: pointer;
+    background: transparent url(data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E) 50%/1em auto no-repeat;
+    border: 0;
+    border-radius: 0.25rem;
+    box-sizing: initial;
+    color: #000;
+    height: 1em;
+    opacity: .5;
+    margin: -0.5rem -0.5rem -0.5rem auto;
+    padding: 0.5rem;
+    width: 1em;
+}
+.modal-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+    position: relative;
+    height: calc(100vh - 200px);
+	border:0px;
+}

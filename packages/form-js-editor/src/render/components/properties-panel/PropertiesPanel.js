@@ -9,7 +9,8 @@ import {
   ValidationGroup,
   IntegrationGroup,
   ValuesGroup,
-  TableGroup
+  TableGroup,
+  FileViewerGroup
 } from './groups';
 
 import {
@@ -28,7 +29,8 @@ function getGroups(field, editField) {
     ValuesGroup(field, editField),
     ValidationGroup(field, editField),
     CustomValuesGroup(field, editField),
-	TableGroup(field, editField)
+	TableGroup(field, editField),
+	FileViewerGroup(field, editField)
   ];
   // contract: if a group returns null, it should not be displayed at all
   return groups.filter(group => group !== null);
