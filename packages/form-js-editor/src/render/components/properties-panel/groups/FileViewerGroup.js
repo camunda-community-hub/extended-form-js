@@ -22,7 +22,9 @@ export default function FileViewerGroup(field, editField) {
     return null;
   } else {
 	if (!field.fileSource) {
-		editField(field, 'fileSource', "'/file/serve?fileId='+data.fileId");
+		editField(field, 'displayFileUpload', true);
+		editField(field, 'displayFileViewer', true);
+		editField(field, 'fileSource', "'/file/serve?fileId='+value.reference");
 		editField(field, 'viewerBackdrop', 'modal-backdrop');
 		editField(field, 'viewerClass', 'modal-dialog');
 		editField(field, 'viewerHeaderClass', 'modal-header');
@@ -31,6 +33,12 @@ export default function FileViewerGroup(field, editField) {
 	}
   }
   
+  const setDisplayFileUpload = (value) => {
+    return editField(field, 'displayFileUpload', value);
+  };
+  const setDisplayFileViewer = (value) => {
+    return editField(field, 'displayFileViewer', value);
+  };
   const setFileSource = (value) => {
     return editField(field, 'fileSource', value);
   };
@@ -60,6 +68,22 @@ export default function FileViewerGroup(field, editField) {
   ];
  
   entries.push(
+    {
+      id: 'displayFileUpload',
+      component: DisplayFileUpload,
+      getValue,
+      field,
+      isEdited: isCheckboxEntryEdited,
+      setDisplayFileUpload
+    },
+    {
+      id: 'displayFileViewer',
+      component: DisplayFileViewer,
+      getValue,
+      field,
+      isEdited: isCheckboxEntryEdited,
+      setDisplayFileViewer
+    },
     {
       id: 'fileSource',
       component: FileSource,
@@ -116,7 +140,38 @@ export default function FileViewerGroup(field, editField) {
     entries
   };
 }
+function DisplayFileUpload(props) {
+  const {
+    field,
+    getValue,
+    id,
+    setDisplayFileUpload
+  } = props;
 
+  return CheckboxEntry({
+    element: field,
+    getValue: getValue('displayFileUpload'),
+    id,
+    label: 'Display FileUpload',
+    setValue: setDisplayFileUpload
+  });
+}
+function DisplayFileViewer(props) {
+  const {
+    field,
+    getValue,
+    id,
+    setDisplayFileViewer
+  } = props;
+
+  return CheckboxEntry({
+    element: field,
+    getValue: getValue('displayFileViewer'),
+    id,
+    label: 'Display File Viewer',
+    setValue: setDisplayFileViewer
+  });
+}
 function FileSource(props) {
   const {
     field,

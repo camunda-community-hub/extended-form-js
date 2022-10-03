@@ -14,7 +14,7 @@ Forked from [@bpmn-io/form-js](https://github.com/bpmn-io/form-js)
  - New property "Should be hidden" in properties panel where you can use javascript expressions to hide components : data.myProcessVariable=='toHide'. Be sure to prefix your process variable with **data.**
 - Date picker component
 - You can populate select (drop down) and checklist options from webservices
-- FileUpload widget where you can define the target endpoint and HTTP verb
+- FileUpload widget where you can define the target endpoint and HTTP verb. This widget also comes with a FileViewer. You can override viewer CSS classnames and define your own endpoint to serve the file. You can use a litteral expression or a javascript expression : '/file/serve?fileId='+data.file.reference (where file is the process variable) or directly '/file/serve?fileId='+value.reference (where value is a direct reference to the component field value).
 - Table widget where you can display/edit and add rows (columns types can be defined)
  
 ## local dev
