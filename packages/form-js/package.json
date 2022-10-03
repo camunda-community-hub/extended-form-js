@@ -1,6 +1,6 @@
 {
   "name": "@camunda-community/form-js",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "Extended version. View and edit forms - powered by bpmn.io",
   "exports": {
     ".": {
@@ -51,8 +51,8 @@
     "url": "https://github.com/camunda-community-hub"
   },
   "dependencies": {
-    "@camunda-community/form-js-editor": "^0.7.6",
-    "@camunda-community/form-js-viewer": "^0.7.6"
+    "@camunda-community/form-js-editor": "^0.7.7",
+    "@camunda-community/form-js-viewer": "^0.7.7"
   },
   "sideEffects": [
     "*.css"
