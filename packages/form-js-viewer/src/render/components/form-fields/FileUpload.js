@@ -118,7 +118,7 @@ export default function FileUpload(props) {
 	      <div class={viewerHeaderClass}>
 	  	    <h4>{viewerHeaderTitle}</h4><button type="button" class="btn-close" onClick={toggleViewer}></button>
   		  </div>
-		  <iframe class={iFrameClass} src={processFileSource}></iframe>
+		  <iframe id="previewFrame" class={iFrameClass} src={processFileSource}></iframe>
 	    </div>
 	  </div>
 	</>

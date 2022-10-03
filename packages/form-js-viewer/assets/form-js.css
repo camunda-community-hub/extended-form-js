@@ -485,14 +485,10 @@
     opacity: 0;
 	z-index: -1;
 }
-@media (min-width: 992px)
-.modal-dialog  {
-    max-width: 800px;
-}
 
 .modal-dialog {
     margin: 1.75rem auto;
-    max-width: 500px;
+    width: calc(100vw - 150px);
     background-clip: padding-box;
     background-color: #fff;
     border: 1px solid rgba(0,0,0,.2);
@@ -537,6 +533,6 @@
     flex: 1 1 auto;
     padding: 1rem;
     position: relative;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 150px);
 	border:0px;
 }
